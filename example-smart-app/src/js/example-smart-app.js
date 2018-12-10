@@ -26,6 +26,9 @@
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
+          console.log('PATIENT', patient);
+          console.log('OBSERVATION', obv);
+          console.log('BYCODES', byCodes);
           var gender = patient.gender;
 
           var fname = '';
@@ -69,7 +72,6 @@
 
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
-
   };
 
   function defaultPatient(){
